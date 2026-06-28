@@ -1,12 +1,3 @@
-#traigo a selenium y al webdriver de chrome, luego abro la pagina y por ultimo cierro el navegador
-#by y keys hay que importarlos en cada archivo que los vayamos a usar, son parte de selenium.webdriver.common
-
-from selenium import webdriver
-from selenium.webdriver.chrome.webdriver import WebDriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from page.login_page import LoginPage
 
 

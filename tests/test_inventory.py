@@ -1,44 +1,25 @@
+from selenium import webdriver
 from selenium.webdriver.common.by import By
+import pytest
+from page.login_page import LoginPage
+from page.inventory_page import InventoryPage   
 
+@pytest.fixture
+def driver_logged(driver):
+    login_page = LoginPage(driver)
+    login_page.login("standard_user", "secret_sauce")
 
-def test_inventory_page(login_in_driver):
+    return InventoryPage(driver)  # Devuelve la instancia de InventoryPage después del inicio de sesión
 
-    driver = login_in_driver
+def test_inventory_title(driver_logged):
+    titulo = driver_logged.obtener_titulo()
+    assert titulo == "Swag Labs", "El título de la página de inventario no es correcto" 
+  
+def test_productos_visible(driver_logged):
+    productos = driver_logged.obtener_productos()
+    assert len(productos) > 0, "No se encontraron productos en la página de inventario"
 
+def test_menu_visible(driver_logged):
+    assert driver_logged.menu_visible(), "El menú no está visible en la página de inventario"   
 
-    # 1) Validar título visible
-    titulo = driver.find_element(By.CLASS_NAME,"title")
-
-    assert titulo.text == "Products"
-
-
-    # 2) Verificar productos visibles
-    productos = driver.find_elements(
-        By.CLASS_NAME,
-        "inventory_item"
-    )
-
-    assert len(productos) > 0
-
-
-    # 3) Obtener nombre del primer producto
-    primer_nombre = driver.find_element(
-        By.CLASS_NAME,
-        "inventory_item_name"
-    ).text
-
-
-    # Obtener precio del primero
-    primer_precio = driver.find_element(
-        By.CLASS_NAME,
-        "inventory_item_price"
-    ).text
-
-
-    print(
-        f"\nProducto: {primer_nombre}"
-    )
-
-    print(
-        f"Precio: {primer_precio}"
-    )
+    assert driver_logged.filtro_visible(), "El filtro no está visible en la página de inventario"
