@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
-#from utils.login_page import login
+from page.login_page import LoginPage
+from utils.data_reader import read_users_csv
 
 
 #vamos a definir todo lo q corresponde al inicio de la página
@@ -19,8 +20,11 @@ def driver():
     
     driver.quit()
 
-#@pytest.fixture
-#def login_in_driver(driver):
-        #login(driver) #con esto llamo a la función login que definí en el archivo login_page.py 
-        #yield driver #con esto devuelvo el driver para que se pueda usar en los test que lo llamen
+@pytest.fixture
+def driver_logged(driver):
+    login_page = LoginPage(driver)
+
+    user = read_users_csv()[0]  # Tomamos el primer usuario del CSV
     
+    login_page.login(user["username"], user["password"])
+    return driver  # Devuelve el driver después del inicio de sesión
