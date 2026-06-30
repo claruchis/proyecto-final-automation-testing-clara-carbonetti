@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 
 
-def test_add_product_to_cart(login_in_driver):
+def test_add_product_to_cart(driver_logged):
 
-    driver = login_in_driver
+    driver = driver_logged
 
 
     # Obtener nombre del primer producto

@@ -1,3 +1,4 @@
+from selenium.webdriver.remote.webdriver import WebDriver
 from page.login_page import LoginPage
 
 
