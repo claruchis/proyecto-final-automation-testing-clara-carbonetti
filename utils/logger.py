@@ -23,6 +23,6 @@ logging.basicConfig(
     force=True,  #sobreescribe la configuración de logging si ya existe
 )
 
-logger =logging.getLogger("Proyecto Final TT")  #obtengo el logger para este módulo
+logger = logging.getLogger("Proyecto Final TT")  #obtengo el logger para este módulo
 
 

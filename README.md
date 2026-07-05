@@ -1,38 +1,163 @@
-# QA Automation - Preentrega - SauceDemo
+# Proyecto Final - QA Automation
 
-## Propósito
+Proyecto de automatización de pruebas desarrollado como entrega final del curso de QA Automation.
 
-Automatizar pruebas funcionales sobre SauceDemo utilizando Selenium y Pytest.
+La automatización fue realizada utilizando Selenium WebDriver, Pytest y el patrón de diseño Page Object Model (POM), incorporando además pruebas de API, logging, reportes HTML y captura automática de evidencias.
 
-Incluye validaciones de:
-
-- Login válido
-- Login inválido
-- Login vacío
-- Inventario
-- Carrito de compras
+---
 
 ## Tecnologías utilizadas
 
-- Python
-- Selenium
+- Python 3
+- Selenium WebDriver
 - Pytest
+- Requests
+- Page Object Model (POM)
 - pytest-html
+- Logging (`RotatingFileHandler`)
+- Git y GitHub
+
+---
+
+## Estructura del proyecto
+
+```
+PROYECTO_FINAL/
+│
+├── data/                  # Datos para pruebas (CSV)
+├── logs/                  # Archivos de log
+├── page/                  # Page Objects
+├── reports/               # Reportes HTML y screenshots
+├── tests/                 # Casos de prueba
+├── utils/                 # Utilidades (logger, helpers)
+│
+├── conftest.py            # Fixtures de Pytest
+├── pytest.ini             # Configuración de Pytest
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Funcionalidades automatizadas
+
+### UI Testing
+
+- Login válido
+- Login inválido
+- Login utilizando datos desde archivo CSV
+- Verificación del título de la página
+- Validación de productos visibles
+- Validación del menú de navegación
+- Validación del filtro de productos
+
+### API Testing
+
+- Validación de endpoints utilizando Requests
+- Verificación de códigos de estado
+- Validación del contenido de las respuestas
+
+---
+
+## Características implementadas
+
+- Page Object Model
+- Fixtures reutilizables
+- Captura automática de screenshots en fallos
+- Reporte HTML de ejecución
+- Logger centralizado
+- Rotación automática de archivos de log
+- Organización modular del proyecto
+
+---
 
 ## Instalación
 
-Clonar repositorio:
+Clonar el repositorio:
 
-git clone URL
+```bash
+git clone https://github.com/claruchis/pre-entrega-automation-testing-clara-carbonetti.git
+```
 
-Instalar dependencias:
+Ingresar al proyecto:
 
+```bash
+cd pre-entrega-automation-testing-clara-carbonetti/PROYECTO_FINAL
+```
+
+Crear el entorno virtual:
+
+### Linux / macOS
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### Windows
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Instalar las dependencias:
+
+```bash
 pip install -r requirements.txt
+```
 
-## Ejecutar pruebas
+---
 
-pytest -v
+## Ejecución de las pruebas
 
-## Generar reporte HTML
+Ejecutar todos los tests:
 
-pytest -v --html=report.html
+```bash
+pytest
+```
+
+Generar reporte HTML:
+
+```bash
+pytest --html=reports/report.html --self-contained-html
+```
+
+## Ejecución de las pruebas
+
+Ejecutar todos los tests:
+
+```bash
+pytest
+```
+
+Generar reporte HTML:
+
+```bash
+pytest --html=reports/report.html --self-contained-html
+```
+
+---
+
+## Reporte HTML
+
+El proyecto genera automáticamente un reporte HTML con el resultado de la ejecución de los tests.
+
+![Reporte HTML](docs/report.png)
+
+---
+
+## Evidencias
+
+Durante la ejecución del proyecto se generan automáticamente:
+
+- Reporte HTML
+- Capturas de pantalla cuando una prueba falla
+- Archivos de log rotativos
+---
+
+## Autor
+
+**Clara Carbonetti**
+
+Proyecto desarrollado como práctica de QA Automation utilizando Python, Selenium y Pytest.
