@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from utils.logger import logger
 
 class LoginPage:
     def __init__(self, driver):
@@ -9,7 +10,10 @@ class LoginPage:
         self.error_password =(By.CSS_SELECTOR, "h3[data-test='error']")
 
     def open(self):
-        self.driver.get("https://www.saucedemo.com/")
+        try: 
+            self.driver.get("https://www.saucedemo.com/")
+        except:
+            logger.critical("No se pudo abrir la página de login")
 
     def ingresar_usuario(self, usuario):
         self.driver.find_element(*self.username_input).send_keys(usuario)

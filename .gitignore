@@ -2,3 +2,10 @@ __pycache__/
 .pytest_cache/
 *.pyc
 .venv/
+
+# Logs
+logs/
+
+# Reportes
+report.html
+reports/
