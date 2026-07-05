@@ -154,6 +154,22 @@ Durante la ejecución del proyecto se generan automáticamente:
 - Reporte HTML
 - Capturas de pantalla cuando una prueba falla
 - Archivos de log rotativos
+
+---
+
+## Interpretación de los reportes
+
+El proyecto genera un reporte HTML con el resultado de la ejecución de los tests.
+
+En el reporte es posible visualizar:
+
+- Total de pruebas ejecutadas.
+- Pruebas aprobadas y fallidas.
+- Tiempo de ejecución.
+- Detalle de cada caso de prueba.
+- Capturas de pantalla asociadas a los tests que fallan.
+
+Además, se generan archivos de log que registran información sobre la ejecución de las pruebas y facilitan el análisis de errores.
 ---
 
 ## Autor

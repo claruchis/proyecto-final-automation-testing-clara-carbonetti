@@ -19,8 +19,8 @@ handler = RotatingFileHandler(
 logging.basicConfig(
     level=logging.INFO,  #tipo de información que se almacena
     handlers=[handler],  #handler que se va a utilizar
-    format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",  #formato del log
-    force=True,  #sobreescribe la configuración de logging si ya existe
+    format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",  
+    force=True,  
 )
 
 logger = logging.getLogger("Proyecto Final TT")  #obtengo el logger para este módulo

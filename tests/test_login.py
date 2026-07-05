@@ -25,7 +25,7 @@ def test_login_invalid_password(driver: WebDriver):
     
     login_page.login("standard_user", "123456")
     
-    error = login_page.get_error_message()
+    error = login_page.get_error_password_message()
 
     
     if error == "hola":
