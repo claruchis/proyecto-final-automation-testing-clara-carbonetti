@@ -35,7 +35,7 @@ def test_login_invalid_password(driver: WebDriver):
 
     #assert error == "hola" #dejo este assert para que falle y se genere la captura de pantalla, el assert correcto queda comentado
    
-    queda comentado el assert correcto y el log de info
+    
     if "Epic sadface: Username and password do not match any user in this service" in error:
         logger.info("Sesión no iniciada correctamente")  #log de info
     else:
