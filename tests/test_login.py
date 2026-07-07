@@ -28,19 +28,19 @@ def test_login_invalid_password(driver: WebDriver):
     error = login_page.get_error_password_message()
 
     
-    if error == "hola":
-        logger.info("El assert esperado se cumplió")
-    else:
-        logger.error(f"El mensaje mostrado no coincide. Mensaje recibido: {error}")
-
-    assert error == "hola" #dejo este assert para que falle y se genere la captura de pantalla, el assert correcto queda comentado
-   
-    #queda comentado el assert correcto y el log de info
-    #if "Epic sadface: Username and password do not match any user in this service" in error:
-    #    logger.info("Sesión no iniciada correctamente")  #log de info
+    #if error == "hola":
+    #    logger.info("El assert esperado se cumplió")
     #else:
-    #    logger.info("El mensaje mostrado no coincide")  #log de error
+    #    logger.error(f"El mensaje mostrado no coincide. Mensaje recibido: {error}")
+
+    #assert error == "hola" #dejo este assert para que falle y se genere la captura de pantalla, el assert correcto queda comentado
+   
+    queda comentado el assert correcto y el log de info
+    if "Epic sadface: Username and password do not match any user in this service" in error:
+        logger.info("Sesión no iniciada correctamente")  #log de info
+    else:
+        logger.info("El mensaje mostrado no coincide")  #log de error
     
-    #assert "Epic sadface: Username and password do not match any user in this service" in error
+    assert "Epic sadface: Username and password do not match any user in this service" in error
 
     
