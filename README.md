@@ -11,6 +11,7 @@ La automatización fue realizada utilizando Selenium WebDriver, Pytest y el patr
 - Python 3
 - Selenium WebDriver
 - Pytest
+- ChromeDriver
 - Requests
 - Page Object Model (POM)
 - pytest-html
@@ -50,6 +51,7 @@ PROYECTO_FINAL/
 - Validación de productos visibles
 - Validación del menú de navegación
 - Validación del filtro de productos
+- Validación del carrito de compra
 
 ### API Testing
 
@@ -76,7 +78,7 @@ PROYECTO_FINAL/
 Clonar el repositorio:
 
 ```bash
-git clone https://github.com/claruchis/pre-entrega-automation-testing-clara-carbonetti.git
+git clone https://github.com/claruchis/proyecto-final-automation-testing-clara-carbonetti.git
 ```
 
 Ingresar al proyecto:
@@ -108,20 +110,6 @@ pip install -r requirements.txt
 ```
 
 ---
-
-## Ejecución de las pruebas
-
-Ejecutar todos los tests:
-
-```bash
-pytest
-```
-
-Generar reporte HTML:
-
-```bash
-pytest --html=reports/report.html --self-contained-html
-```
 
 ## Ejecución de las pruebas
 
